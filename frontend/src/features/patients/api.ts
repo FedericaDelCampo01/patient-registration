@@ -9,14 +9,11 @@ const apiClient = axios.create({
 });
 
 export const patientsApi = {
-
-  //Fetch all registered patients
   getAll: async (): Promise<Patient[]> => {
     const response = await apiClient.get<Patient[]>('/patients');
     return response.data;
   },
 
-  //Register a new patient
   create: async (payload: CreatePatientPayload): Promise<Patient> => {
     const formData = new FormData();
     formData.append('full_name', payload.full_name);
