@@ -52,7 +52,7 @@ export const PatientsPage: React.FC = () => {
               <p className={styles.subtitle}>{STRINGS.APP_SUBTITLE}</p>
             </div>
           </div>
-          <Button variant="gradient" size="lg" pill onClick={handleOpenForm} className={styles.addBtn}>
+          <Button variant="white" size="lg" pill onClick={handleOpenForm} className={styles.addBtn}>
             <img src={plusIcon} alt="" className={styles.plusIcon} />
             {STRINGS.ADD_PATIENT}
           </Button>

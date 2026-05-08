@@ -93,6 +93,20 @@
   box-shadow: 0 4px 20px rgba(29, 58, 176, 0.4);
 }
 
+.white {
+  background: #ffffff;
+  color: var(--color-primary-dark);
+  border: none;
+  transition: background-color var(--transition-fast),
+              box-shadow var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.white:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+}
+
 /* --- Sizes --- */
 
 .sm {
