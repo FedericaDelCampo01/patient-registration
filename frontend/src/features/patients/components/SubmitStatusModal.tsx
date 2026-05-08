@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal } from '../../../components/Modal';
 import { Button } from '../../../components/Button';
 import { STRINGS } from '../../../constants/strings';
-import tickIcon from '../../../assets/tick-icon.svg';
+import tickIcon from '../../../assets/tick-icon.png';
 import crossIcon from '../../../assets/ccross-icon.svg';
 import styles from './SubmitStatusModal.module.css';
 
@@ -58,7 +58,7 @@ export const SubmitStatusModal: React.FC<SubmitStatusModalProps> = ({
             </Button>
           )}
           <Button
-            variant={isSuccess ? 'primary' : 'danger'}
+            variant={isSuccess ? 'primary' : 'neutral'}
             onClick={onClose}
           >
             {STRINGS.MODAL_CLOSE}

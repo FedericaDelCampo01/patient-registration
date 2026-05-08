@@ -3,9 +3,18 @@
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-sm);
   border: 1.5px solid var(--color-border);
-  overflow: hidden;
+  position: relative;
+  padding-top: var(--space-8);
   transition: box-shadow var(--transition-normal),
-    transform var(--transition-normal);
+    transform var(--transition-normal),
+    border-radius var(--transition-normal);
+}
+
+.expanded {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: var(--shadow-md);
+  z-index: 10;
 }
 
 .card:hover {
@@ -16,26 +25,38 @@
 .cardHeader {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-5);
+  justify-content: center;
+  position: relative;
+  padding: 0 var(--space-10) var(--space-4) var(--space-5);
 }
 
-.avatar {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: var(--radius-full);
-  background-color: var(--color-primary);
-  color: var(--color-primary-dark);
+.iconWrapper {
+  position: absolute;
+  top: -1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.iconContainer {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-lg);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-lg);
-  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(29, 58, 176, 0.22), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.userIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  filter: invert(19%) sepia(87%) saturate(709%) hue-rotate(211deg) brightness(99%) contrast(96%);
 }
 
 .headerInfo {
-  flex: 1;
+  text-align: center;
   min-width: 0;
 }
 
@@ -65,6 +86,9 @@
   cursor: pointer;
   transition: background-color var(--transition-fast);
   flex-shrink: 0;
+  position: absolute;
+  right: var(--space-4);
+  top: 0;
 }
 
 .expandButton:hover {
@@ -95,11 +119,21 @@
 }
 
 .details {
-  max-height: 0;
+  position: absolute;
+  top: 100%;
+
+  left: -1.5px;
+  right: -1.5px;
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
   overflow: hidden;
+  max-height: 0;
+  opacity: 0;
   transition: max-height var(--transition-slow) ease,
     opacity var(--transition-normal) ease;
-  opacity: 0;
 }
 
 .detailsVisible {

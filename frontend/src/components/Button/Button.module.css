@@ -70,6 +70,53 @@
   background-color: #f0a8a0;
 }
 
+.gradient {
+  background: linear-gradient(135deg, #8AB2FC 0%, #1D3AB0 100%);
+  color: var(--color-white);
+  border: none;
+  transition: filter var(--transition-fast),
+              box-shadow var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.gradient::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: inherit;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  pointer-events: none;
+}
+
+.gradient:hover:not(:disabled) {
+  filter: brightness(1.08);
+  box-shadow: 0 4px 20px rgba(29, 58, 176, 0.4);
+}
+
+.white {
+  background: #ffffff;
+  color: var(--color-primary-dark);
+  border: none;
+  transition: background-color var(--transition-fast),
+              box-shadow var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.white:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+}
+
+.neutral {
+  background-color: #E5E7EB;
+  color: #4B5563;
+  border-color: #E5E7EB;
+}
+
+.neutral:hover:not(:disabled) {
+  background-color: #D1D5DB;
+}
+
 /* --- Sizes --- */
 
 .sm {
@@ -88,6 +135,12 @@
   padding: var(--space-3) var(--space-8);
   font-size: var(--font-size-lg);
   height: 3rem;
+}
+
+/* --- Pill --- */
+
+.pill {
+  border-radius: var(--radius-full);
 }
 
 /* --- Full Width --- */

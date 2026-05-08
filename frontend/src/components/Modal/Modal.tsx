@@ -3,6 +3,7 @@
 // ============================================================
 
 import React, { useEffect } from 'react';
+import closeIcon from '../../assets/close-icon.svg';
 import styles from './Modal.module.css';
 
 interface ModalProps {
@@ -39,15 +40,18 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }
   return (
     <div
       className={styles.overlay}
-      onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={title}
     >
-      <div
-        className={styles.modal}
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className={styles.modal}>
+        <button
+          className={styles.closeButton}
+          onClick={onClose}
+          aria-label="Close"
+        >
+          <img src={closeIcon} alt="" aria-hidden="true" />
+        </button>
         {children}
       </div>
     </div>

@@ -8,6 +8,8 @@ import { usePatients } from '../hooks/usePatients';
 import { useCreatePatient } from '../hooks/useCreatePatient';
 import { STRINGS } from '../../../constants/strings';
 import type { CreatePatientPayload } from '../types';
+import logo from '../../../assets/logo.png';
+import emptyStateIcon from '../../../assets/empty-state-icon.png';
 import styles from './PatientsPage.module.css';
 
 export const PatientsPage: React.FC = () => {
@@ -43,12 +45,16 @@ export const PatientsPage: React.FC = () => {
       {/* Header */}
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <div className={styles.headerText}>
-            <h1 className={styles.title}>{STRINGS.APP_TITLE}</h1>
-            <p className={styles.subtitle}>{STRINGS.APP_SUBTITLE}</p>
+          <div className={styles.headerBrand}>
+            <img src={logo} alt="Logo" className={styles.logo} />
+            <div className={styles.headerText}>
+              <h1 className={styles.title}>{STRINGS.APP_TITLE}</h1>
+              <p className={styles.subtitle}>{STRINGS.APP_SUBTITLE}</p>
+            </div>
           </div>
-          <Button variant="primary" size="lg" onClick={handleOpenForm}>
-            + {STRINGS.ADD_PATIENT}
+          <Button variant="white" size="lg" pill onClick={handleOpenForm} className={styles.addBtn}>
+            <span className={styles.plusBadge} aria-hidden="true" />
+            {STRINGS.ADD_PATIENT}
           </Button>
         </div>
       </header>
@@ -66,12 +72,16 @@ export const PatientsPage: React.FC = () => {
         {/* Empty state */}
         {!isLoading && patients.length === 0 && (
           <div className={styles.centerState}>
-            <div className={styles.emptyIcon}>🏥</div>
+            <img src={emptyStateIcon} alt="" className={styles.emptyIcon} />
             <h2 className={styles.emptyTitle}>{STRINGS.PATIENTS_EMPTY_TITLE}</h2>
             <p className={styles.stateText}>{STRINGS.PATIENTS_EMPTY_SUBTITLE}</p>
-            <Button variant="secondary" onClick={handleOpenForm}>
-              + {STRINGS.ADD_PATIENT}
-            </Button>
+            <button
+              onClick={handleOpenForm}
+              className={styles.emptyAddBtn}
+              aria-label={STRINGS.ADD_PATIENT}
+            >
+              <span className={styles.emptyPlusBadge} aria-hidden="true" />
+            </button>
           </div>
         )}
 

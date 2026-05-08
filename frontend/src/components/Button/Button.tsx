@@ -5,7 +5,7 @@
 import React from 'react';
 import styles from './Button.module.css';
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';
+type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'gradient' | 'white' | 'neutral';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,6 +13,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   isLoading?: boolean;
   fullWidth?: boolean;
+  pill?: boolean;
   children: React.ReactNode;
 }
 
@@ -21,6 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
   size = 'md',
   isLoading = false,
   fullWidth = false,
+  pill = false,
   children,
   disabled,
   className,
@@ -34,6 +36,7 @@ export const Button: React.FC<ButtonProps> = ({
         styles[size],
         fullWidth ? styles.fullWidth : '',
         isLoading ? styles.loading : '',
+        pill ? styles.pill : '',
         className ?? '',
       ]
         .filter(Boolean)

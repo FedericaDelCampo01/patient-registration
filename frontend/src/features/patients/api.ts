@@ -2,7 +2,7 @@ import axios from 'axios';
 import type { Patient, CreatePatientPayload } from './types';
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost/api/v1',
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
     Accept: 'application/json',
   },
