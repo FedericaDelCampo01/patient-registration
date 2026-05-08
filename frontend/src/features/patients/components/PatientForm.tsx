@@ -27,7 +27,7 @@ const validate = (values: PatientFormValues): PatientFormErrors => {
 
   if (!values.full_name.trim()) {
     errors.full_name = STRINGS.ERROR_FULL_NAME_REQUIRED;
-  } else if (!/^[\p{L}\s\-]+$/u.test(values.full_name)) {
+  } else if (!/^[\p{L}\s-]+$/u.test(values.full_name)) {
     errors.full_name = STRINGS.ERROR_FULL_NAME_LETTERS;
   }
 
@@ -71,7 +71,7 @@ export const PatientForm: React.FC<PatientFormProps> = ({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
     const validationErrors = validate(values);
