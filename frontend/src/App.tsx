@@ -1,4 +1,4 @@
-// App – root component (router handles all rendering)
+// App - root component
 
 export default function App() {
   return null;

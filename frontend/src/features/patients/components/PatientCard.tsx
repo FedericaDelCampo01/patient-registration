@@ -47,7 +47,7 @@ export const PatientCard: React.FC<PatientCardProps> = ({ patient }) => {
         </button>
       </div>
 
-      {/* Document photo — always visible */}
+      {/* Document photo */}
       <div className={styles.documentPreview}>
         <img
           src={patient.document_photo_url}

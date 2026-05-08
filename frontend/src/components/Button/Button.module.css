@@ -8,8 +8,8 @@
   border-radius: var(--radius-md);
   font-weight: var(--font-weight-semibold);
   transition: background-color var(--transition-fast),
-              transform var(--transition-fast),
-              box-shadow var(--transition-fast);
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
   position: relative;
   white-space: nowrap;
   border: 2px solid transparent;
@@ -23,8 +23,6 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
-
-/* --- Variants --- */
 
 .primary {
   background-color: var(--color-primary-dark);
@@ -73,8 +71,8 @@
   color: var(--color-white);
   border: none;
   transition: filter var(--transition-fast),
-              box-shadow var(--transition-fast),
-              transform var(--transition-fast);
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .gradient::after {
@@ -96,8 +94,8 @@
   color: var(--color-primary-dark);
   border: none;
   transition: background-color var(--transition-fast),
-              box-shadow var(--transition-fast),
-              transform var(--transition-fast);
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .white:hover:not(:disabled) {
@@ -135,19 +133,13 @@
   height: 3rem;
 }
 
-/* --- Pill --- */
-
 .pill {
   border-radius: var(--radius-full);
 }
 
-/* --- Full Width --- */
-
 .fullWidth {
   width: 100%;
 }
-
-/* --- Loading --- */
 
 .loading {
   cursor: wait;

@@ -120,14 +120,28 @@
 }
 
 @keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  14%       { transform: scale(1.22); }
-  28%       { transform: scale(1); }
-  42%       { transform: scale(1.14); }
-  70%       { transform: scale(1); }
-}
 
-/* --- Empty state add button --- */
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  14% {
+    transform: scale(1.22);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.14);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+}
 
 .emptyAddBtn {
   background: none;
@@ -172,9 +186,7 @@
   transform: translate(-50%, -50%);
 }
 
-/* --- Add Patient button --- */
-
-.addBtn > span {
+.addBtn>span {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
