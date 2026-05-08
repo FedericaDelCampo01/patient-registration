@@ -1,6 +1,4 @@
-// ============================================================
 // Modal – reusable modal with overlay and animation
-// ============================================================
 
 import React, { useEffect } from 'react';
 import closeIcon from '../../assets/close-icon.svg';

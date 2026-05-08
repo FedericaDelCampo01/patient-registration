@@ -1,7 +1,4 @@
-// ============================================================
 // UI Strings – Patient Registration
-// All user-facing text lives here for easy maintenance
-// ============================================================
 
 export const STRINGS = {
   // --- App ---

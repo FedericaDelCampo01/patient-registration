@@ -1,6 +1,4 @@
-// ============================================================
 // Entry point – mounts the React app with the router
-// ============================================================
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
