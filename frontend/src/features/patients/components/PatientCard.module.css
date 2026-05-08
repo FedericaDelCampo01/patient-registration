@@ -42,17 +42,17 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, #8AB2FC 0%, #1D3AB0 100%);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(29, 58, 176, 0.45);
+  box-shadow: 0 8px 24px rgba(29, 58, 176, 0.22), 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .userIcon {
   width: 1.5rem;
   height: 1.5rem;
-  filter: brightness(0) invert(1);
+  filter: invert(19%) sepia(87%) saturate(709%) hue-rotate(211deg) brightness(99%) contrast(96%);
 }
 
 .headerInfo {
