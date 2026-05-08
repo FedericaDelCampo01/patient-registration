@@ -74,7 +74,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-4);
+  gap: var(--space-2);
   min-height: 400px;
   text-align: center;
 }
@@ -89,8 +89,8 @@
 }
 
 .emptyIcon {
-  font-size: 4rem;
-  line-height: 1;
+  width: 140px;
+  height: auto;
 }
 
 .emptyTitle {
@@ -119,6 +119,59 @@
   }
 }
 
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14%       { transform: scale(1.22); }
+  28%       { transform: scale(1); }
+  42%       { transform: scale(1.14); }
+  70%       { transform: scale(1); }
+}
+
+/* --- Empty state add button --- */
+
+.emptyAddBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-top: var(--space-3);
+  animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+.emptyPlusBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 6px 28px rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+.emptyPlusBadge::before,
+.emptyPlusBadge::after {
+  content: '';
+  position: absolute;
+  background: #1D3AB0;
+  border-radius: 2px;
+  top: 50%;
+  left: 50%;
+}
+
+.emptyPlusBadge::before {
+  width: 2.5px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+}
+
+.emptyPlusBadge::after {
+  width: 22px;
+  height: 2.5px;
+  transform: translate(-50%, -50%);
+}
+
 /* --- Add Patient button --- */
 
 .addBtn > span {
@@ -131,10 +184,47 @@
   width: 26px;
   height: 26px;
   flex-shrink: 0;
-  filter: hue-rotate(20deg) brightness(0.5) saturate(1.5);
+  filter: brightness(0) invert(1);
   transition: transform var(--transition-normal);
 }
 
 .addBtn:hover .plusIcon {
+  transform: rotate(90deg) scale(1.15);
+}
+
+.plusBadge {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #1D3AB0;
+  flex-shrink: 0;
+  position: relative;
+  transition: transform var(--transition-normal);
+}
+
+.plusBadge::before,
+.plusBadge::after {
+  content: '';
+  position: absolute;
+  background: white;
+  border-radius: 1px;
+  top: 50%;
+  left: 50%;
+}
+
+.plusBadge::before {
+  width: 2px;
+  height: 13px;
+  transform: translate(-50%, -50%);
+}
+
+.plusBadge::after {
+  width: 13px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.addBtn:hover .plusBadge {
   transform: rotate(90deg) scale(1.15);
 }

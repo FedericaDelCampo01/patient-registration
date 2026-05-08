@@ -107,6 +107,16 @@
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
 }
 
+.neutral {
+  background-color: #E5E7EB;
+  color: #4B5563;
+  border-color: #E5E7EB;
+}
+
+.neutral:hover:not(:disabled) {
+  background-color: #D1D5DB;
+}
+
 /* --- Sizes --- */
 
 .sm {

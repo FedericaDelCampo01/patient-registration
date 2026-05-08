@@ -8,8 +8,8 @@ import { usePatients } from '../hooks/usePatients';
 import { useCreatePatient } from '../hooks/useCreatePatient';
 import { STRINGS } from '../../../constants/strings';
 import type { CreatePatientPayload } from '../types';
-import plusIcon from '../../../assets/plus-icon.png';
 import logo from '../../../assets/logo.png';
+import emptyStateIcon from '../../../assets/empty-state-icon.png';
 import styles from './PatientsPage.module.css';
 
 export const PatientsPage: React.FC = () => {
@@ -53,7 +53,7 @@ export const PatientsPage: React.FC = () => {
             </div>
           </div>
           <Button variant="white" size="lg" pill onClick={handleOpenForm} className={styles.addBtn}>
-            <img src={plusIcon} alt="" className={styles.plusIcon} />
+            <span className={styles.plusBadge} aria-hidden="true" />
             {STRINGS.ADD_PATIENT}
           </Button>
         </div>
@@ -72,13 +72,16 @@ export const PatientsPage: React.FC = () => {
         {/* Empty state */}
         {!isLoading && patients.length === 0 && (
           <div className={styles.centerState}>
-            <div className={styles.emptyIcon}>🏥</div>
+            <img src={emptyStateIcon} alt="" className={styles.emptyIcon} />
             <h2 className={styles.emptyTitle}>{STRINGS.PATIENTS_EMPTY_TITLE}</h2>
             <p className={styles.stateText}>{STRINGS.PATIENTS_EMPTY_SUBTITLE}</p>
-            <Button variant="gradient" pill onClick={handleOpenForm} className={styles.addBtn}>
-              <img src={plusIcon} alt="" className={styles.plusIcon} />
-              {STRINGS.ADD_PATIENT}
-            </Button>
+            <button
+              onClick={handleOpenForm}
+              className={styles.emptyAddBtn}
+              aria-label={STRINGS.ADD_PATIENT}
+            >
+              <span className={styles.emptyPlusBadge} aria-hidden="true" />
+            </button>
           </div>
         )}
 
