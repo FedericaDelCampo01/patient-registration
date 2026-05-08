@@ -31,7 +31,6 @@ export const PatientCard: React.FC<PatientCardProps> = ({ patient }) => {
       <div className={styles.cardHeader}>
         <div className={styles.headerInfo}>
           <h3 className={styles.name}>{patient.full_name}</h3>
-          <span className={styles.date}>{formattedDate}</span>
         </div>
         <button
           className={styles.expandButton}
