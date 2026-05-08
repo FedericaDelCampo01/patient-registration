@@ -23,7 +23,35 @@
   max-height: 90vh;
   overflow-y: auto;
   z-index: var(--z-modal);
+  position: relative;
   animation: slideUp var(--transition-normal) ease;
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+  border: none;
+  background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  z-index: 1;
+}
+
+.closeButton:hover {
+  background-color: var(--color-border);
+}
+
+.closeButton img {
+  width: 0.75rem;
+  height: 0.75rem;
+  opacity: 0.6;
 }
 
 @keyframes fadeIn {

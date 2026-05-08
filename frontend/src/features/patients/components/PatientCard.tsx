@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import type { Patient } from '../types';
 import { STRINGS } from '../../../constants/strings';
 import arrowDownIcon from '../../../assets/arrow-down-icon.svg';
+import userIcon from '../../../assets/user-icon.svg';
 import styles from './PatientCard.module.css';
 
 interface PatientCardProps {
@@ -19,11 +20,15 @@ export const PatientCard: React.FC<PatientCardProps> = ({ patient }) => {
 
   return (
     <div className={`${styles.card} ${isExpanded ? styles.expanded : ''}`}>
-      {/* Always visible */}
-      <div className={styles.cardHeader}>
-        <div className={styles.avatar}>
-          {patient.full_name.charAt(0).toUpperCase()}
+      {/* Icon floating on top */}
+      <div className={styles.iconWrapper}>
+        <div className={styles.iconContainer}>
+          <img src={userIcon} alt="" className={styles.userIcon} />
         </div>
+      </div>
+
+      {/* Header */}
+      <div className={styles.cardHeader}>
         <div className={styles.headerInfo}>
           <h3 className={styles.name}>{patient.full_name}</h3>
           <span className={styles.date}>{formattedDate}</span>

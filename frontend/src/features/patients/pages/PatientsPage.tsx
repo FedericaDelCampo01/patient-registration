@@ -9,6 +9,7 @@ import { useCreatePatient } from '../hooks/useCreatePatient';
 import { STRINGS } from '../../../constants/strings';
 import type { CreatePatientPayload } from '../types';
 import plusIcon from '../../../assets/plus-icon.png';
+import logo from '../../../assets/logo.png';
 import styles from './PatientsPage.module.css';
 
 export const PatientsPage: React.FC = () => {
@@ -44,9 +45,12 @@ export const PatientsPage: React.FC = () => {
       {/* Header */}
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <div className={styles.headerText}>
-            <h1 className={styles.title}>{STRINGS.APP_TITLE}</h1>
-            <p className={styles.subtitle}>{STRINGS.APP_SUBTITLE}</p>
+          <div className={styles.headerBrand}>
+            <img src={logo} alt="Logo" className={styles.logo} />
+            <div className={styles.headerText}>
+              <h1 className={styles.title}>{STRINGS.APP_TITLE}</h1>
+              <p className={styles.subtitle}>{STRINGS.APP_SUBTITLE}</p>
+            </div>
           </div>
           <Button variant="gradient" size="lg" pill onClick={handleOpenForm} className={styles.addBtn}>
             <img src={plusIcon} alt="" className={styles.plusIcon} />
