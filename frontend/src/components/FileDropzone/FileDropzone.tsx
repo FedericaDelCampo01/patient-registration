@@ -1,6 +1,4 @@
-// ============================================================
 // FileDropzone – drag & drop file upload, JPG only
-// ============================================================
 
 import React, { useCallback, useState } from 'react';
 import uploadIcon from '../../assets/upload-icon.svg';

@@ -1,20 +1,17 @@
-// ============================================================
 // UI Strings – Patient Registration
-// All user-facing text lives here for easy maintenance
-// ============================================================
 
 export const STRINGS = {
-  // --- App ---
+  // App
   APP_TITLE: 'Patient Registration',
   APP_SUBTITLE: 'Manage your patients efficiently',
 
-  // --- Patients List ---
+  // Patients List
   ADD_PATIENT: 'Add Patient',
   PATIENTS_EMPTY_TITLE: 'No patients yet',
   PATIENTS_EMPTY_SUBTITLE: 'Add your first patient to get started',
   PATIENTS_LOADING: 'Loading patients...',
 
-  // --- Patient Card ---
+  // Patient Card
   CARD_EXPAND: 'View details',
   CARD_COLLAPSE: 'Hide details',
   CARD_EMAIL_LABEL: 'Email',
@@ -22,7 +19,7 @@ export const STRINGS = {
   CARD_REGISTERED_LABEL: 'Registered',
   CARD_DOCUMENT_LABEL: 'Document Photo',
 
-  // --- Form ---
+  // Form
   FORM_TITLE: 'Register New Patient',
   FORM_SUBMIT: 'Register Patient',
   FORM_CANCEL: 'Cancel',
@@ -45,7 +42,7 @@ export const STRINGS = {
   FORM_DOCUMENT_HINT: 'Drag & drop a JPG file here, or click to select',
   FORM_DOCUMENT_SELECTED: 'File selected',
 
-  // --- Validation errors ---
+  // Validation errors
   ERROR_FULL_NAME_REQUIRED: 'Full name is required.',
   ERROR_FULL_NAME_LETTERS: 'Full name must contain only letters and spaces.',
   ERROR_EMAIL_REQUIRED: 'Email address is required.',
@@ -56,7 +53,7 @@ export const STRINGS = {
   ERROR_DOCUMENT_REQUIRED: 'Document photo is required.',
   ERROR_DOCUMENT_FORMAT: 'Only JPG images are accepted.',
 
-  // --- Modal states ---
+  // Modal states
   MODAL_SUCCESS_TITLE: 'Patient Registered!',
   MODAL_SUCCESS_MESSAGE: 'The patient has been successfully registered. A confirmation email has been sent.',
   MODAL_ERROR_TITLE: 'Registration Failed',

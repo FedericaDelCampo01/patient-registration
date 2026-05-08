@@ -19,7 +19,6 @@ class PatientRegistered extends Notification implements ShouldQueue
     public function via(object $notifiable): array
     {
         return ['mail'];
-        // Futuro SMS: return ['mail', 'vonage'];
     }
 
     public function toMail(object $notifiable): MailMessage

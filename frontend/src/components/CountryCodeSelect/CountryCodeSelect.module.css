@@ -78,8 +78,6 @@
   transform: rotate(180deg);
 }
 
-/* Dropdown panel */
-
 .dropdown {
   position: absolute;
   top: calc(100% + var(--space-1));
@@ -99,6 +97,7 @@
     opacity: 0;
     transform: translateY(-6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -219,6 +218,7 @@
     opacity: 0;
     transform: translateY(-4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

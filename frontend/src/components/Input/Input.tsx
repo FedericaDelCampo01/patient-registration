@@ -1,6 +1,4 @@
-// ============================================================
 // Input – reusable input component with error state
-// ============================================================
 
 import React from 'react';
 import styles from './Input.module.css';
