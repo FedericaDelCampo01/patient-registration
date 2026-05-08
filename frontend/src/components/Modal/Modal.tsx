@@ -3,7 +3,7 @@
 // ============================================================
 
 import React, { useEffect } from 'react';
-import crossIcon from '../../assets/ccross-icon.svg';
+import closeIcon from '../../assets/close-icon.svg';
 import styles from './Modal.module.css';
 
 interface ModalProps {
@@ -50,7 +50,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }
           onClick={onClose}
           aria-label="Close"
         >
-          <img src={crossIcon} alt="" aria-hidden="true" />
+          <img src={closeIcon} alt="" aria-hidden="true" />
         </button>
         {children}
       </div>

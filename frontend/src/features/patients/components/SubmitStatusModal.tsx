@@ -30,11 +30,12 @@ export const SubmitStatusModal: React.FC<SubmitStatusModalProps> = ({
       <div className={`${styles.content} ${isSuccess ? styles.success : styles.error}`}>
         {/* Icon */}
         <div className={styles.iconWrapper}>
-          {isSuccess ? (
-            <img src={tickIcon} className={styles.icon} alt="" aria-hidden="true" />
-          ) : (
-            <span className={styles.crossMark} aria-hidden="true" />
-          )}
+          <img
+            src={isSuccess ? tickIcon : crossIcon}
+            className={styles.icon}
+            alt=""
+            aria-hidden="true"
+          />
         </div>
 
         {/* Text */}
