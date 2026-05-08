@@ -3,9 +3,17 @@
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-sm);
   border: 1.5px solid var(--color-border);
-  overflow: hidden;
+  position: relative;
   transition: box-shadow var(--transition-normal),
-    transform var(--transition-normal);
+    transform var(--transition-normal),
+    border-radius var(--transition-normal);
+}
+
+.expanded {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: var(--shadow-md);
+  z-index: 1;
 }
 
 .card:hover {
@@ -95,11 +103,21 @@
 }
 
 .details {
-  max-height: 0;
+  position: absolute;
+  top: 100%;
+
+  left: -1.5px;
+  right: -1.5px;
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
   overflow: hidden;
+  max-height: 0;
+  opacity: 0;
   transition: max-height var(--transition-slow) ease,
     opacity var(--transition-normal) ease;
-  opacity: 0;
 }
 
 .detailsVisible {
