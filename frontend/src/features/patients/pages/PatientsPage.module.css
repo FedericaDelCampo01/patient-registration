@@ -95,3 +95,23 @@
     transform: rotate(360deg);
   }
 }
+
+/* --- Add Patient button --- */
+
+.addBtn > span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.addBtn .plusIcon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  filter: hue-rotate(20deg) brightness(0.82);
+  transition: transform var(--transition-normal);
+}
+
+.addBtn:hover .plusIcon {
+  transform: rotate(90deg) scale(1.15);
+}

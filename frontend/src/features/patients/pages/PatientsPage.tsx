@@ -8,6 +8,7 @@ import { usePatients } from '../hooks/usePatients';
 import { useCreatePatient } from '../hooks/useCreatePatient';
 import { STRINGS } from '../../../constants/strings';
 import type { CreatePatientPayload } from '../types';
+import plusIcon from '../../../assets/plus-icon.png';
 import styles from './PatientsPage.module.css';
 
 export const PatientsPage: React.FC = () => {
@@ -47,8 +48,9 @@ export const PatientsPage: React.FC = () => {
             <h1 className={styles.title}>{STRINGS.APP_TITLE}</h1>
             <p className={styles.subtitle}>{STRINGS.APP_SUBTITLE}</p>
           </div>
-          <Button variant="primary" size="lg" onClick={handleOpenForm}>
-            + {STRINGS.ADD_PATIENT}
+          <Button variant="gradient" size="lg" pill onClick={handleOpenForm} className={styles.addBtn}>
+            <img src={plusIcon} alt="" className={styles.plusIcon} />
+            {STRINGS.ADD_PATIENT}
           </Button>
         </div>
       </header>
@@ -69,8 +71,9 @@ export const PatientsPage: React.FC = () => {
             <div className={styles.emptyIcon}>🏥</div>
             <h2 className={styles.emptyTitle}>{STRINGS.PATIENTS_EMPTY_TITLE}</h2>
             <p className={styles.stateText}>{STRINGS.PATIENTS_EMPTY_SUBTITLE}</p>
-            <Button variant="secondary" onClick={handleOpenForm}>
-              + {STRINGS.ADD_PATIENT}
+            <Button variant="gradient" pill onClick={handleOpenForm} className={styles.addBtn}>
+              <img src={plusIcon} alt="" className={styles.plusIcon} />
+              {STRINGS.ADD_PATIENT}
             </Button>
           </div>
         )}
